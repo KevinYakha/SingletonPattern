@@ -6,9 +6,11 @@
         {
             Console.WriteLine("Main starts here!");
 
-            // Console.WriteLine(StandardInterestRate.interestRate); // an object reference required
+            // and object reference is required:
+            // Console.WriteLine($"The current interest rate is at: {currentRate.interestRate * 100}%");
+
             StandardInterestRate currentRate = StandardInterestRate.getInstance();
-            Console.WriteLine(currentRate.interestRate);
+            Console.WriteLine($"The current interest rate is at: {currentRate.interestRate * 100}%");
 
             // changing interest rate
             currentRate.interestRate = 0.05f;
@@ -16,7 +18,7 @@
             // trying to get another instance
             StandardInterestRate anotherRate = StandardInterestRate.getInstance();
 
-            Console.WriteLine(currentRate.interestRate);
+            Console.WriteLine($"The current interest rate is at: {anotherRate.interestRate * 100}%");
         }
     }
 }
